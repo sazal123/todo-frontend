@@ -45,3 +45,15 @@ export async function deleteTodo(id: string) {
   const res = await api.delete(`/todos/${id}`);
   return res.data;
 }
+
+// Register
+export const register = async (data: {
+  name: string;
+  email: string;
+  password: string;
+}) => {
+  const res = await api.post("/auth/register", data);
+  const { token } = res.data;
+  // localStorage.setItem("token", token);
+  // return token;
+};

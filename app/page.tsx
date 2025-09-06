@@ -14,7 +14,7 @@ export default function HomePage() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      router.push("/login");
+      router.push("/register");
       return;
     }
     setIsLoggedIn(true);
@@ -37,7 +37,7 @@ export default function HomePage() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     setIsLoggedIn(false);
-    router.push("/login");
+    router.push("/register");
   };
 
   if (loading)
